@@ -13,15 +13,15 @@ export default {
   },
   mounted() {
     this.getBodyWidth();
-    document.body.addEventListener('resize', this.getBodyWidth);
+    window.addEventListener('resize', this.getBodyWidth);
   },
   beforeDestroy() {
-    document.body.removeEventListener('resize', this.getBodyWidth);
+    window.removeEventListener('resize', this.getBodyWidth);
   },
   methods: {
     getBodyWidth() {
       console.log('width');
-      this.windowSize = document.body.offsetWidth;
+      this.windowSize = window.innerWidth;
     },
   },
 };
